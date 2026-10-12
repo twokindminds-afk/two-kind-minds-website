@@ -43,3 +43,11 @@ Enable it in the repository's **Settings → Pages → Build and deployment → 
 If deployment reports a protected-environment branch restriction, open **Settings → Environments → github-pages → Deployment branches and tags** and allow `preview/first-version` as a selected branch. Keep any other existing rules intact.
 
 The expected Pages address is https://twokindminds-afk.github.io/two-kind-minds-website/. This is a public preview when published. Leave **Custom domain** blank; no `CNAME` file is used and no change to twokindminds.com is required. Free GitHub Pages is available for public repositories; private repositories may require a paid GitHub plan.
+
+## Add Mat and Bobbie's photograph
+
+Put the approved photograph in `public/images/`. In `src/content.ts`, set `storyPhoto` to an object with `src: 'images/mat-and-bobbie.jpg'` and descriptive `alt` text. Optional `objectPosition` controls the crop (for example, `center 35%`). The image retains the existing story-area dimensions on desktop and mobile. Leave `storyPhoto` as `null` to retain the landscape placeholder; if the supplied image cannot load, the landscape remains as a fallback. Relative paths automatically include the GitHub Pages base.
+
+## Add real YouTube videos to From Our World
+
+Add each verified video to the `content` array in `src/content.ts`, using its real title, description, YouTube watch URL, `format: 'Video'`, and the appropriate `pillar` ID. Optional `thumbnail: { src, alt }` can use an approved local image or the video's real thumbnail URL. Use concise alt text, or an empty string if the thumbnail simply duplicates the title. The existing filters select the four unchanged pillars, and video cards link to YouTube with a “Watch video” action. Articles and podcasts use the same library with their matching formats. No videos are automatically fetched or published; the array remains empty until verified items are supplied.

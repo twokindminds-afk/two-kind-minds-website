@@ -8,8 +8,26 @@ export const pillars = [
 {id:'mind',title:'Freedom of Mind',description:'Question old beliefs, discover fresh perspectives and make room for inner growth.',symbol:'☼'},
 {id:'family',title:'Family & Relationships',description:'Build deeper connections through compassion, awareness and shared understanding.',symbol:'♡'},
 {id:'living',title:'Freedom to Live',description:'Create a conscious, meaningful life that reflects what matters to you.',symbol:'↗'}] as const;
+// Put the supplied photo in public/images/ and set src to 'images/mat-and-bobbie.jpg'.
+// Relative image paths are resolved against Vite's base, including GitHub Pages.
+export const storyPhoto: { src: string; alt: string; objectPosition?: string } | null = null;
+
 export type PillarId = typeof pillars[number]['id'];
-export interface ContentItem {id:string;title:string;description:string;pillar:PillarId;format:'Podcast'|'Video'|'Article';url:string}
+export interface ContentItem {
+  id: string;
+  title: string;
+  description: string;
+  pillar: PillarId;
+  format: 'Podcast' | 'Video' | 'Article';
+  url: string;
+  // Optional thumbnail supplied for a real published video or article.
+  thumbnail?: { src: string; alt: string };
+}
+
+export function assetUrl(src: string): string {
+  if (/^https?:\/\//i.test(src)) return src;
+  return `${import.meta.env.BASE_URL}${src.replace(/^\/+/, '')}`;
+}
 // Add verified published content here. Empty arrays show coming-soon states.
 export const content: ContentItem[] = [];
 export interface Episode {id:string;title:string;description:string;url:string;guest?:string}
