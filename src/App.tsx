@@ -9,7 +9,7 @@ function SectionHeading({eyebrow,title,children}:{eyebrow:string;title:string;ch
 function Landscape({small=false}:{small?:boolean}){return <div className={`landscape ${small?'small':''}`} role="img" aria-label="Illustrative landscape placeholder: a warm sun above layered green hills"><div className="sun"/><div className="hill hill-back"/><div className="hill hill-mid"/><div className="hill hill-front"/><div className="landscape-line"/><span className="art-caption">A LITTLE SPACE. A NEW PERSPECTIVE.</span></div>}
 function StoryPortrait(){
  const [failed,setFailed]=useState(false);
- return <div className="story-art">{storyPhoto&&!failed?<img className="story-photo" src={assetUrl(storyPhoto.src)} alt={storyPhoto.alt} style={{objectPosition:storyPhoto.objectPosition??'center'}} loading="lazy" decoding="async" width="400" height="350" onError={()=>setFailed(true)}/>:<Landscape small/>}<div className="portrait-caption">MAT & BOBBIE {!storyPhoto||failed?<span>Our photograph will live here</span>:null}</div></div>
+ return <div className="story-art">{storyPhoto&&!failed?<div className="story-photo-frame"><img className="story-photo" src={assetUrl(storyPhoto.src)} alt={storyPhoto.alt} style={{objectPosition:storyPhoto.objectPosition??'center'}} loading="lazy" decoding="async" width="400" height="350" onError={()=>setFailed(true)}/></div>:<Landscape small/>}<div className="portrait-caption">MAT & BOBBIE {!storyPhoto||failed?<span>Our photograph will live here</span>:null}</div></div>
 }
 function ContentThumbnail({src,alt}:{src:string;alt:string}){
  const [failed,setFailed]=useState(false);
