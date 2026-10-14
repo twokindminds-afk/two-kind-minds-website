@@ -29,7 +29,7 @@ export function assetUrl(src: string): string {
   return `${import.meta.env.BASE_URL}${src.replace(/^\/+/, '')}`;
 }
 // Add verified published content here. Empty arrays show coming-soon states.
-export const content: ContentItem[] = [];
+export const content: ContentItem[] = [{id:'how-ready-are-we',title:'How Ready Are We? Bitcoin and the Broken Money System',description:'Mat explores financial preparedness, questioning the money system and why Bitcoin deserves a closer look.',pillar:'financial',format:'Podcast',url:'https://www.youtube.com/watch?v=Lvg88G2l-lw',thumbnail:{src:'https://img.youtube.com/vi/Lvg88G2l-lw/hqdefault.jpg',alt:'YouTube thumbnail for Mat’s Bitcoin podcast episode'}}];
 export interface Episode {id:string;title:string;description:string;url:string;guest?:string}
-export const episodes: Episode[] = [];
+export const episodes: Episode[] = [{id:'how-ready-are-we',title:'How Ready Are We? Bitcoin and the Broken Money System',description:'Mat reflects on being prepared, the financial system and Bitcoin as an alternative.',url:'https://www.youtube.com/watch?v=Lvg88G2l-lw'}];
 export const reflections: Episode[] = [];
