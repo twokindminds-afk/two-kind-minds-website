@@ -10,7 +10,7 @@ export const pillars = [
 {id:'living',title:'Freedom to Live',description:'Create a conscious, meaningful life that reflects what matters to you.',symbol:'↗'}] as const;
 // Put the supplied photo in public/images/ and set src to 'images/mat-and-bobbie.jpg'.
 // Relative image paths are resolved against Vite's base, including GitHub Pages.
-export const storyPhoto: { src: string; alt: string; objectPosition?: string } | null = null;
+export const storyPhoto: { src: string; alt: string; objectPosition?: string } | null = {src:'7CC4914C-6B98-42C7-8A52-10E4B96E10A8_1_105_c.jpeg',alt:'Mat and Bobbie standing together outdoors in front of green foliage',objectPosition:'center 42%'};
 
 export type PillarId = typeof pillars[number]['id'];
 export interface ContentItem {
