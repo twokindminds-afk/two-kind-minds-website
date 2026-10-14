@@ -4,9 +4,9 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* Supplied photography and published content use the existing image proportions. */
-.story-photo{display:block;width:100%;height:350px;object-fit:cover;border-radius:3px}
+.story-photo-frame{width:100%;height:350px;overflow:hidden;border-radius:3px}.story-photo{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.22);transform-origin:center 38%}
 .content-thumbnail{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin-bottom:18px}
-@media(max-width:760px){.story-photo{height:280px}}
+@media(max-width:760px){.story-photo-frame{height:280px}}
 
 /* Editorial featured episode: real thumbnail, prominent play action and responsive layout */
 .featured-episode{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px;align-items:center;margin-top:28px;padding:15px;background:#203e33;border:1px solid #c5a57d66;border-radius:5px;box-shadow:0 12px 28px #081c1740}
